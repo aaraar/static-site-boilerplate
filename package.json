@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "webpack --mode production",
     "build": "node src/tasks/generate.js",
-    "postbuild": "node stc/tasks/compress.js",
+    "postbuild": "node src/tasks/compress.js",
     "predev": "webpack --mode development",
     "dev": "node src/tasks/generate.js"
   },

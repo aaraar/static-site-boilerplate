@@ -1,8 +1,6 @@
 const fs = require ( 'fs-extra' );
 const zlib = require ( 'zlib' );
 const brotli = require ( 'brotli' );
-const { stationsPath } = require ( "../generateData" );
-const { getJson } = require ( "../generateData" );
 
 const brotliSettings = {
     extension: 'br',
