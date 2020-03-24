@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(content="width=device-width, initial-scale=1.0" name="viewport")
+        meta(content="ie=edge" http-equiv="X-UA-Compatible")
+        title #{ title }
+        link(rel='stylesheet' href=`/${ revisions[ "main.css" ] }`)
+        link(rel='icon' href='/favicon/favicon.ico' type='image/x-icon')
+        link(rel='manifest' href='/manifest.webmanifest')
+    body
+        a(href='/')
+            header
+                h1  #{ pageTitle }
+        main
+            div(id='app')
+                block content
+            footer MIT © Bas de Greeuw, docs and images are CC-BY-4.0.
+        script(type='text/javascript').
+            if ( 'serviceWorker' in navigator ) {
+                window.addEventListener ( 'load', function () {
+                    navigator.serviceWorker.register ( '/service-worker.js' ).then ( function ( registration ) {
+                        registration.update ()
+                    }, function ( err ) {
+                        console.log ( 'ServiceWorker registration failed: ', err );
+                    } );
+                } );
+            }
+        script(src=`/${ revisions[ "main.js" ] }` async)
+

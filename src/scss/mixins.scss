@@ -1,0 +1,58 @@
+/*********************
+VARIABLES
+*********************/
+
+$dark: #000;
+$light: #fff;
+$primary: #005a85;
+$secondary: #ffa57a;
+
+
+/*********************
+FONTS
+*********************/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+h2, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+  @if $point == x-large {
+    @media (min-width: 1200px) {
+      @content ;
+    }
+  } @else if $point == large {
+    @media (min-width: 1000px) {
+      @content ;
+    }
+  } @else if $point == medium {
+    @media (min-width: 800px) {
+      @content ;
+    }
+  } @else if $point == small {
+    @media (min-width: 600px) {
+      @content ;
+    }
+  } @else if $point == x-small {
+    @media (min-width: 400px) {
+      @content ;
+    }
+  } @else if $point == xx-small {
+    @media (max-width: 200px) {
+      @content ;
+    }
+
+  }
+}

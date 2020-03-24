@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "src": "/(.*).js",
+      "headers": {
+        "cache-control": "s-maxage=31536000"
+      },
+      "dest": "/$1.js"
+    },
+    {
+      "src": "/(.*).css",
+      "headers": {
+        "cache-control": "s-maxage=31536000"
+      },
+      "dest": "/$1.css"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404"
+    }
+  ]
+}
